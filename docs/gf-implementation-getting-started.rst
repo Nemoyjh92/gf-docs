@@ -1,6 +1,10 @@
---------------------------------------
-ALTERNATIVE 1: HAVE ACCESS TO GF CLOUD
---------------------------------------
+============================================
+Implementing a Resource Grammar: First Steps
+============================================
+
+------------------------------------------
+Alternative 1: You have access to GF Cloud
+------------------------------------------
 
 1. Go to `GF Cloud <https://cloud.grammaticalframework.org/>`__. Choose
    “Minibar”
@@ -29,9 +33,9 @@ ALTERNATIVE 1: HAVE ACCESS TO GF CLOUD
 
 .. image:: ../images/Pastedimage20230113123753.png
 
-------------------------------------
-ALTERNATIVE 2: NO ACCESS TO GF CLOUD
-------------------------------------
+-------------------------------------------------
+Alternative 2: You do not have access to GF Cloud
+-------------------------------------------------
 
 1. Find the overloaded oper you want to implement. For example, mkNP
 

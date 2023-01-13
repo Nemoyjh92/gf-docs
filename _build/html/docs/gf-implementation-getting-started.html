@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALTERNATIVE 1: HAVE ACCESS TO GF CLOUD &mdash; Grammatical Framework 1.0 documentation</title>
+  <title>Implementing a Resource Grammar: First Steps &mdash; Grammatical Framework 1.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Implementing a Resource Grammar: Stage 1" href="gf-implementation-grammar-engineering-1.html" />
+    <link rel="next" title="Implementing a Resource Grammar: Stage 1, A Naive Foods Grammar" href="gf-implementation-grammar-engineering-1.html" />
     <link rel="prev" title="Welcome to Grammatical Framework’s documentation!" href="../index.html" /> 
 </head>
 
@@ -41,9 +41,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ALTERNATIVE 1: HAVE ACCESS TO GF CLOUD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#alternative-2-no-access-to-gf-cloud">ALTERNATIVE 2: NO ACCESS TO GF CLOUD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gf-implementation-grammar-engineering-1.html">Implementing a Resource Grammar: Stage 1</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Implementing a Resource Grammar: First Steps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-1-you-have-access-to-gf-cloud">Alternative 1: You have access to GF Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-2-you-do-not-have-access-to-gf-cloud">Alternative 2: You do not have access to GF Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gf-implementation-grammar-engineering-1.html">Implementing a Resource Grammar: Stage 1, A Naive Foods Grammar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gf-implementation-grammar-engineering-2.html">Implementing a Resource Grammar: Stage 2, Making Foods Grammar Grammatical</a></li>
 </ul>
 
         </div>
@@ -60,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">ALTERNATIVE 1: HAVE ACCESS TO GF CLOUD</li>
+      <li class="breadcrumb-item active">Implementing a Resource Grammar: First Steps</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/docs/gf-implementation-getting-started.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -70,8 +74,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="alternative-1-have-access-to-gf-cloud">
-<h1>ALTERNATIVE 1: HAVE ACCESS TO GF CLOUD<a class="headerlink" href="#alternative-1-have-access-to-gf-cloud" title="Permalink to this heading"></a></h1>
+  <section id="implementing-a-resource-grammar-first-steps">
+<h1>Implementing a Resource Grammar: First Steps<a class="headerlink" href="#implementing-a-resource-grammar-first-steps" title="Permalink to this heading"></a></h1>
+<section id="alternative-1-you-have-access-to-gf-cloud">
+<h2>Alternative 1: You have access to GF Cloud<a class="headerlink" href="#alternative-1-you-have-access-to-gf-cloud" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Go to <a class="reference external" href="https://cloud.grammaticalframework.org/">GF Cloud</a>. Choose
 “Minibar”</p></li>
@@ -94,13 +100,13 @@ You should get something like the following:</p></li>
 implement, from the inner-most functions to the outer-most. So in
 this example, if you want to implement the Adjective “big_A”, you
 need to implement “PositA” first, then “CompAP”, then finally
-“UseComp”. See <a class="reference internal" href="gf-implementation-grammar-engineering-1.html#stage-1"><span class="std std-ref">Implementing a Resource Grammar: Stage 1</span></a> for
+“UseComp”. See <a class="reference internal" href="gf-implementation-grammar-engineering-1.html#stage-1"><span class="std std-ref">Implementing a Resource Grammar: Stage 1, A Naive Foods Grammar</span></a> for
 how to implement these functions.</p></li>
 </ol>
 <img alt="../_images/Pastedimage20230113123753.png" src="../_images/Pastedimage20230113123753.png" />
 </section>
-<section id="alternative-2-no-access-to-gf-cloud">
-<h1>ALTERNATIVE 2: NO ACCESS TO GF CLOUD<a class="headerlink" href="#alternative-2-no-access-to-gf-cloud" title="Permalink to this heading"></a></h1>
+<section id="alternative-2-you-do-not-have-access-to-gf-cloud">
+<h2>Alternative 2: You do not have access to GF Cloud<a class="headerlink" href="#alternative-2-you-do-not-have-access-to-gf-cloud" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Find the overloaded oper you want to implement. For example, mkNP</p></li>
 <li><p>Go to the <a class="reference external" href="https://www.grammaticalframework.org/lib/doc/synopsis/index.html">RGL
@@ -156,13 +162,14 @@ UseComp and CompAP as they make up the implementation of mkCl :</p></li>
 </ol>
 <img alt="../_images/Pastedimage20230113104702.png" src="../_images/Pastedimage20230113104702.png" />
 </section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Grammatical Framework’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gf-implementation-grammar-engineering-1.html" class="btn btn-neutral float-right" title="Implementing a Resource Grammar: Stage 1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gf-implementation-grammar-engineering-1.html" class="btn btn-neutral float-right" title="Implementing a Resource Grammar: Stage 1, A Naive Foods Grammar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
