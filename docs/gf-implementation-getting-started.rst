@@ -8,7 +8,7 @@ Here we're assuming a few prerequisites:
 
 You know these things, and you would like to implement a resource grammar for a new language. To get started, we have a very concrete goal: to implement just enough grammar to be able to linearise the Foods grammar, which was introduced in lesson 2 of the GF tutorial. There is a version implemented using the resource grammar in the `gf-contrib repository <https://github.com/GrammaticalFramework/gf-contrib/blob/master/foods/FoodsI.gf>`__: lexicon aside, the implementation is as follows.
 
-.. code-block::
+.. code-block:: haskell
 
   lincat
     Comment = Utt ;
@@ -26,7 +26,7 @@ You know these things, and you would like to implement a resource grammar for a 
 
 We want to make a fully functional subset of the RGL, so that we can plug in our grammar (for example, Tamil) just like this:
 
-.. code-block::
+.. code-block:: haskell
 
    concrete FoodsTam of Foods = open SyntaxTam, ParadigmsTam in {
 
