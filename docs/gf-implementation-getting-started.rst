@@ -1,6 +1,54 @@
-============================================
-Implementing a Resource Grammar: First Steps
-============================================
+========================================================
+Implementing a Resource Grammar Depth-First: First Steps
+========================================================
+
+Here we're assuming a few prerequisites:
+- You have written some small GF grammars before, or are otherwise familiar with GF syntax and module structure. You know about ``cat``, ``fun``, ``lincat``, ``lin`` and ``oper`` definitions, and you know what ``abstract``, ``concrete`` and ``resource`` modules are. If not, read lessons 1 and 2 of the `GF tutorial <http://www.grammaticalframework.org/doc/tutorial/gf-tutorial.html>`__ first.
+- You have seen, or perhaps used yourself, the RGL API to implement linearisations. You know what a line like ``mkCl (mkNP i_Pron) old_A`` means, and when to use it: as a linearisation to some function, e.g. ``lin TrueFactAboutMe = mkCl (mkNP i_Pron) old_A``.
+
+You know these things, and you would like to implement a resource grammar for a new language. To get started, we have a very concrete goal: to implement just enough grammar to be able to linearise the Foods grammar, which was introduced in lesson 2 of the GF tutorial. There is a version implemented using the resource grammar in the `gf-contrib repository <https://github.com/GrammaticalFramework/gf-contrib/blob/master/foods/FoodsI.gf>`__: lexicon aside, the implementation is as follows.
+
+.. code-block::
+
+  lincat
+    Comment = Utt ;
+    Item = NP ;
+    Kind = CN ;
+    Quality = AP ;
+  lin
+    Pred item quality = mkUtt (mkCl item quality) ;
+    This kind = mkNP this_Det kind ;
+    ...
+    Mod quality kind = mkCN quality kind ;
+    Very quality = mkAP very_AdA quality ;
+
+
+
+We want to make a fully functional subset of the RGL, so that we can plug in our grammar (for example, Tamil) just like this:
+
+.. code-block::
+
+   concrete FoodsTam of Foods = open SyntaxTam, ParadigmsTam in {
+
+   lincat
+     Comment = Utt ;
+     Item = NP ;
+     Kind = CN ;
+     Quality = AP ;
+    lin
+      Pred item quality = mkUtt (mkCl item quality) ;
+      This kind = mkNP this_Det kind ;
+      ...
+      Mod quality kind = mkCN quality kind ;
+      Very quality = mkAP very_AdA quality ;
+
+      Pizza = mkN "பீத்சா" ;
+      ...
+
+
+ After we're done with the exercise, all the infrastructure is in place, but a lot of grammatical structures is still missing. So if you tried to use the new language to implement another application grammar, it would *compile*, but not *linearise*. But the good news is that once you're past the initial hurdle of getting all the modules working, the rest is just grammar engineering. And that's fun!
+
+ Note that this approach is not for everyone. Jumping right to the full resource grammar can be overwhelming; in that case, you could try a `mini resource grammar <https://github.com/GrammaticalFramework/gf-contrib/blob/master/mini/newmini/MiniGrammar.gf>`__ instead. But that will be the topic of another tutorial—this one is for you if you want to jump right in to the full RGL.
 
 ------------------------------------------
 Alternative 1: You have access to GF Cloud
@@ -63,7 +111,7 @@ Alternative 2: You do not have access to GF Cloud
    or you can open the file up in your own computer with the following
    commands, assuming you are in your gf-rgl folder.
 
-.. code-block:: 
+.. code-block::
 
    $ cd src/api
    $ grep -A1 <OPER> Constructors.gf
@@ -84,7 +132,7 @@ mkNP Constructors.gf”
    case, we want to implement DetCN, so we will use the following
    command:
 
-.. code-block:: 
+.. code-block::
 
    $ grep DetCN *.gf
 
@@ -96,5 +144,3 @@ This will search for DetCN in all .gf files.
    UseComp and CompAP as they make up the implementation of mkCl :
 
 .. image:: ../images/Pastedimage20230113104702.png
-
-
