@@ -46,7 +46,7 @@ We want to make a fully functional subset of the RGL, so that we can plug in our
       ...
 
 
- After we're done with the exercise, all the infrastructure is in place, but a lot of grammatical structures is still missing. So if you tried to use the new language to implement another application grammar, it would *compile*, but not *linearise*. But the good news is that once you're past the initial hurdle of getting all the modules working, the rest is just grammar engineering. And that's fun!
+After we're done with the exercise, all the infrastructure is in place, but a lot of grammatical structures is still missing. So if you tried to use the new language to implement another application grammar, it would *compile*, but not *linearise*. But the good news is that once you're past the initial hurdle of getting all the modules working, the rest is just grammar engineering. And that's fun!
 
  Note that this approach is not for everyone. Jumping right to the full resource grammar can be overwhelming; in that case, you could try a `mini resource grammar <https://github.com/GrammaticalFramework/gf-contrib/blob/master/mini/newmini/MiniGrammar.gf>`__ instead. But that will be the topic of another tutorial—this one is for you if you want to jump right in to the full RGL.
 
